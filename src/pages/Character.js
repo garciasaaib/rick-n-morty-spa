@@ -7,6 +7,7 @@ const Character = () => {
     </article>
     <article class="Characters-card">
       <h3>Name:</h3>
+      <h3>Episodes:</h3>
       <h3>Status:</h3>
       <h3>Species:</h3>
       <h3>Gender:</h3>

@@ -1,6 +1,6 @@
 const path = require('path'); //para declarar la ruta raiz
 const HtmlWebpackPlugin = require('html-webpack-plugin'); 
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = { 
   entry: path.resolve(__dirname, './src/index.js'),
   output: {
@@ -22,12 +22,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin([
+    new HtmlWebpackPlugin(
       {
         inject: true,
-        template: path.resolve(__dirname, './public/index.html'),
-        filename: path.resolve(__dirname, './index.html'),
+        template: './public/index.html',
+        filename: './index.html',
+      }
+    ),
+    new CopyWebpackPlugin([
+      {
+        from: './src/styles/styles.css',
+        to: ''
       }
     ])
-  ]
+  ],
 }
